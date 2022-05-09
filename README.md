@@ -1,8 +1,15 @@
 # Today I Learned
 최종수정일 : 2022.01.05
 
-
 ## 오늘 배운 내용
+
+## 목차
+
+1. [Notion](##1-Notion)
+2. [Git과 Github]((##2-git---github))
+3. [Typora](##3-Typora)
+
+
 
 ### 	1. Notion
 
@@ -163,3 +170,106 @@
 ## 앞으로의 계획
 
 *Notion, Typora, Github*을 이용하여 좀 더 편리하게 코딩 공부를 해야겠다.
+
+
+
+---
+
+
+
+## MacOS AWS 설정 방법
+
+### 1번째 방법
+
+- 키 설정
+
+키파일 재설정시 .ssh 디렉토리 전체 삭제해야함.
+`rm -r ~/.ssh`
+(./ssh 폴더 및 안의 파일 다 지우는 명령어)
+`cat ~/.ssh/id_rsa.pub`
+(key 확인 명령어 -> 제대로 삭제되었는지 확인)
+`ssh-keygen`
+(key 생성 명령어)
+어느 파일에 키를 저장할지, 비밀번호는 무엇으로 할지 물어봄 -> 따로 설정하지 않고 엔터쳐서 넘기기
+`cat ~/.ssh/id_rsa.pub`
+(key 확인 명령어 -> 제대로 설치되었는지 확인)
+
+- pem 파일
+
+`cp /다운로드받은 경로/파일명.pem ~/.ssh/`
+(.ssh 디렉토리에 pem파일 복사 붙여넣기)
+`cd ~/.ssh`
+(./ssh 디렉토리로 이동)
+`ls`
+(현재 디렉토리의 파일 목록을 보여주는 명령어 -> .pem 파일 생성되었는지 확인)
+`chmod 600 파일명.pem`
+(pem 파일 권한 변경)
+
+- .ssh 디렉토리에서 config 파일 만들기
+
+`vim config`
+(config 파일 생성하고 `i`눌러서 다음과 같은 내용쓰기)
+
+```
+Host [서버명]
+HostName [서버 접속 IP]
+User [Terminal 접속 ID]
+IdentityFile ~/.ssh/[키파일명.pem]
+```
+
+`esc` 누르고 `:wq!` 명령어로 저장 후 종료
+`chmod 700 config`
+(config 파일의 권한 수정)
+`ls -l`
+(파일 권한 확인하는 명령어)
+
+- 서버접속
+
+`ssh [서버명]`
+([서버명]에 접속하는 명령어)
+`yes`
+입력 후 엔터
+
+- 서버 이용 설정
+
+`conda info - - envs`
+(가상환경 목록 확인하는 명령어)
+`conda activate python3`
+(python3 가상환경을 실행하는 명령어)
+`cat > jup`
+(jup 파일 생성 명령어)
+`nohup jupyter-notebook --ip=0.0.0.0 --no-browser --port=[jupyter-notebook사용 Port] &`
+(입력 후 엔터치고 ctrl+d로 저장)
+`chmod 777 jup`
+(jup 파일 권한 변경하는 명령어)
+`./jup`
+(jup 파일 실행하는 명령어 -> 한번 더 엔터쳐서 넘기기)
+`ps -ef | grep jupyter | grep [Terminal 접속 ID]`
+(실행중인 프로세스 확인하는 명령어)
+
+- 참고
+
+`kill -9 [프로세스 번호]`
+(프로세스가 여러 개 실행되고 있을 시에 프로세스를 강제 종료시키는 명령어 - 자신의 프로세스가 아니면 안 지워짐)
+
+- 원격 jupyter-notebook 접속 URL로 서버접속 후에 서버 종료시 `exit` 명령어로 서버 사용 종료
+
+
+
+### 2번째 방법
+
+
+
+### pem파일을 다운로드 받은 폴더 안에서
+
+`chmod 400 <키파일명.pem>`
+
+`ssh -i <키파일명.pem> <username>@<ip주소>`
+
+
+
+### 예시) 
+
+`chmod 400 s-D-team01.pem`
+
+`ssh -i s-D-team01.pem lab01@12.34.567.890`
