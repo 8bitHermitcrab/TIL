@@ -7,18 +7,16 @@
 
 ## 목차
 
-[1. Notion](#1-notion)
 
-[2. Git 과 Github](#2-git---github)
 
-[3. Typora](#3-typora)
-
-[앞으로의 계획](#-------)
-
-[4. MacOS AWS 설정 방법](#4-macos-aws------)
-
-+ [1번째 방법](#1-----)
-+ [2번째 방법](#2-----)
++ [1. Notion](#1-notion)
++ [2. Git 과 Github](#2-git---github)
++ [3. Typora](#3-typora)
++ [4. MacOS AWS 설정 방법](#4-macos-aws------)
++ [5. 통계학개론](#5------)
++ [6. 머신러닝](#6-----)
++ [7. 딥러닝](#7----)
++ [8. 자연어 처리](#8-------)
 
 
 
@@ -192,9 +190,9 @@
 
 
 
-## 4. MacOS AWS 설정 방법
+### 4. MacOS AWS 설정 방법
 
-### 1번째 방법
+#### 1번째 방법
 
 - 키 설정
 
@@ -271,11 +269,11 @@ IdentityFile ~/.ssh/[키파일명.pem]
 
 
 
-### 2번째 방법
+#### 2번째 방법
 
 
 
-### pem파일을 다운로드 받은 폴더 안에서
+##### pem파일을 다운로드 받은 폴더 안에서
 
 `chmod 400 <키파일명.pem>`
 
@@ -283,8 +281,33 @@ IdentityFile ~/.ssh/[키파일명.pem]
 
 
 
-### 예시) 
+##### 예시) 
 
 `chmod 400 s-D-team01.pem`
 
 `ssh -i s-D-team01.pem lab01@12.34.567.890`
+
+
+
+### 5. 통계학개론
+
+(Statistics)
+
+
+
+### 6. 머신러닝
+
+(Machine Learning)
+
+
+
+### 7. 딥러닝
+
+(Deep Learning)
+
+
+
+### 8. 자연어 처리
+
+(Natural Language Processing)
+
