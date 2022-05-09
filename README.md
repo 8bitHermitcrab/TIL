@@ -1,13 +1,28 @@
 # Today I Learned
-최종수정일 : 2022.01.05
+최종수정일 : 2022.05.09
 
 ## 오늘 배운 내용
 
+
+
 ## 목차
 
-1. [Notion](##1-Notion)
-2. [Git과 Github]((##2-git---github))
-3. [Typora](##3-Typora)
+[1. Notion](#1-notion)
+
+[2. Git 과 Github](#2-git---github)
+
+[3. Typora](#3-typora)
+
+[앞으로의 계획](#-------)
+
+[4. MacOS AWS 설정 방법](#4-macos-aws------)
+
++ [1번째 방법](#1-----)
++ [2번째 방법](#2-----)
+
+
+
+---
 
 
 
@@ -177,7 +192,7 @@
 
 
 
-## MacOS AWS 설정 방법
+## 4. MacOS AWS 설정 방법
 
 ### 1번째 방법
 
